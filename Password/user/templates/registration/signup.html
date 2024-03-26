@@ -3,10 +3,23 @@
 <div class="shadow-wrap">
  <div class="form-wrap">
   <h3>Signup </h3>
-<form method="POST">
- {% csrf_token %}
- {{form}}
- <button type="submit">Submit</button>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="username">
+      <label for="{{ form.first_name.id_for_label }}">Login:</label>
+      {{ form.username }}
+    </div>
+    <div class="password1">
+      <label for="{{ form.password1.id_for_label }}">Password:</label>
+      {{ form.password }}
+    </div>
+
+
+
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
 </form>
 <a class="signup-link" href="{% url "user:login" %}">Login</a>
 </div>

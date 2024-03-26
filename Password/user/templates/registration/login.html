@@ -1,5 +1,26 @@
-<form method="POST">
-    {% csrf_token %}
-    {{form}}
-    <button type="submit">Submit</button>
+{% extends "user.html" %}
+{% block content %}
+<div class="shadow-wrap">
+ <div class="form-wrap">
+  <h3>Login </h3>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="username">
+        <label for="{{ form.first_name.id_for_label }}">Login:</label>
+        {{ form.username }}
+        </div>
+        <div class="password1">
+            <label for="{{ form.password1.id_for_label }}">Password:</label>
+            {{ form.password1 }}
+        </div>
+
+
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
 </form>
+
+</div>
+</div>
+{% endblock content %}
